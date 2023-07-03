@@ -3,10 +3,14 @@ import {todoListState} from "../store";
 import {useState} from "react";
 
 export default function TodoItemCreator() {
+    // react中的hook
     const [inputValue, setInputValue] = useState('');
+    // export function useSetRecoilState<T>(recoilState: RecoilState<T>): SetterOrUpdater<T>;
+    // 返回来的是一个函数，用于修改state中的数据
     const setTodoList = useSetRecoilState(todoListState);
 
     const addItem = () => {
+        // 参数是上一次数据的值，这里用来拼接成新的值
         setTodoList((oldTodoList) => [
             ...oldTodoList,
             {
@@ -15,6 +19,7 @@ export default function TodoItemCreator() {
                 isComplete: false,
             },
         ]);
+        // 清空输入数据
         setInputValue('');
     };
 

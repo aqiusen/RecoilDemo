@@ -9,7 +9,8 @@ export default function CharacterCount() {
         <div onClick={() => {
             setText("555")
         }
-        }>change To 555
+        }>
+            change To 555
         </div>
     </>;
 }
