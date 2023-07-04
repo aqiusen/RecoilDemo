@@ -7,7 +7,10 @@ function App() {
     <div className="App">
           Learn React
           <CharacterCounter/>
-         <TodoList></TodoList>
+        <br/>
+        <br/>
+        <br/>
+         <TodoList/>
     </div>
   );
 }

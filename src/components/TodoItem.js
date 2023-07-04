@@ -4,7 +4,6 @@ import {todoListState} from "../store";
 export default function TodoItem({item}) {
     const [todoList, setTodoList] = useRecoilState(todoListState);
     const index = todoList.findIndex((listItem) => listItem === item);
-    debugger
     const editItemText = ({target: {value}}) => {
         const newList = replaceItemAtIndex(todoList, index, {
             ...item,

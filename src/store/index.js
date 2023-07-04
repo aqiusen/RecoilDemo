@@ -1,4 +1,4 @@
-import {atom, selector} from "recoil";
+import {atom, atomFamily, selector, selectorFamily} from "recoil";
 //  selector 函数可以作为定义的一个处理函数，get函数能做转换，其实也能做过滤函数用
 // 里面的get参数可以用来获取其他state的数据
 export const charCountState=selector({
@@ -21,10 +21,27 @@ export const todoListCountState=selector({
 // 类似原来的state数据
 export const textState=atom({
     key: 'textState', // unique ID (with respect to other atoms/selectors)
-    default: '', // default value (aka initial value)
+    default: "", // default value (aka initial value)
 });
 
 export const todoListState=atom({
     key: "TodoList",
     default: []
 })
+
+
+// 类似原来的state数据
+export const textStateFamily=atomFamily({
+    key: 'textState', // unique ID (with respect to other atoms/selectors)
+    default: (id)=>{
+        return ""
+    }, // default value (aka initial value)
+});
+
+export const textStateSelectorFamily=selectorFamily({
+    key: 'textStateSelectorFamily', // unique ID (with respect to other atoms/selectors)
+    get: (id) => ({get}) => {
+        const text=get(textStateFamily(id));
+        return {text, length: text.length};
+    },
+});

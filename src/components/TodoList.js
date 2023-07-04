@@ -13,7 +13,6 @@ export default function TodoList() {
         console.log("enter it")
         setNoCompleteList(todoList.filter(item=>!item.isComplete))
     },[todoList])
-    debugger
     return <>
         <TodoItemCreator/>
         {

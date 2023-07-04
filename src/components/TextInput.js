@@ -7,11 +7,10 @@ export default function TextInput() {
     const onChange = (event) => {
         setText(event.target.value);
     };
-
     return (
         <div>
             <input type="text" value={text} onChange={onChange} />
-            <br />
+            <br/>
             Echo: {text}
         </div>
     );
