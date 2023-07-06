@@ -1,6 +1,7 @@
 import './App.css';
 import CharacterCounter from "./components/CharacterCounter";
 import TodoList from "./components/TodoList";
+import Counter from "./components/Counter";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <br/>
         <br/>
          <TodoList/>
+        <Counter/>
     </div>
   );
 }
